@@ -1,0 +1,10 @@
+my_data
+my_data/jpg
+my_data/png
+my_data/gif
+my_data/data
+my_data/data/txt
+my_data/data/dat
+my_data/python
+my_data/python/py
+my_data/python/ipynb

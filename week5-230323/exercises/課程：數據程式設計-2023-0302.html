@@ -1,0 +1,264 @@
+
+<!-- saved from url=(0110)http://140.129.118.16/~richwang/exercise/TodayExercises_title_ForLook.php?dataFile=111-2-BigData-2023-0302.txt -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=Big5">
+
+<!-- global variables are listed below! -->
+  <title>課程：數據程式設計</title>
+  <style>
+    #title 
+	{
+	  color: blue;
+	  font-size: 120%; 
+	} 
+	#code
+	{  color:blue;
+	   font-family: "細明體","new courier"; 
+	}
+	#exercise
+	{  color: red;
+	   font-size: 110%;
+	   background-color: #FFE0AE;
+	   padding: 10px 10px 10px 10px; 
+	}
+	.myImage
+	{  /*float: left;*/ 
+	   width: 260;
+	   border: 1;
+	   padding: 5px 3px 3px 3px;
+	}
+	.myCode
+	{  /*float: right;*/ 
+       color: blue; 
+	   background-color: #DCFFF9;
+	   padding: 5px 3px 3px 3px; 
+	} 
+  </style> 
+  
+  <script language="Javascript1.2">
+    function hideOrShow(n)
+	{  
+	   var str = "myCode"+n;
+	      
+	   var el = document.getElementById(str);
+	   	   
+	   if ( el.style.display != "none" )
+	   {  el.style.display = "none";
+	   }
+	   else
+	   {  el.style.display = '';
+	   }
+	   
+	   str = "myImage"+n;
+	      
+	   var el = document.getElementById(str);
+	   	   
+	   if ( el.style.display != "none" )
+	   {  el.style.display = "none";
+	   }
+	   else
+	   {  el.style.display = '';
+	   }
+	} 
+
+	  function checkData(form) // 傳送資料前做初步的資料驗證 
+	  { 
+	     if ( form.stuNo.value=="" )
+		 {  alert("學號是一定要的啦！");
+	        return;
+	     }
+	     /*  for from file version:
+		 else if ( form.stuNo.value!="" ) // 2017-0924
+		 {
+			alert("學號輸入錯誤！"); 
+			return;
+		 }
+		 */
+	     else if ( form.stuName.value=="" )
+	     {  alert("您漏填姓名了！");
+	        return;
+	     }  
+	     /*
+		 else if ( form.fPassword.value=="" )
+		   {  alert("少密碼是不行的！");
+	          return;
+	       }
+		 //*/    
+		 form.submit(); // 檢查後可以放心傳送資料了！      
+	  }
+  </script> 
+</head>
+<body>
+
+<form name="frmExercise" action="http://140.129.118.16/~richwang/exercise/upload_exercise_DIP_div.php" method="post" enctype="multipart/form-data"> 
+
+<table border="1" width="100%">
+  <caption id="title">課程：數據程式設計</caption> 
+  <tbody><tr>
+    <th>班級：<input type="textfield" name="stuClass" size="10" value="資工二"></th>
+	<th>學號：<input type="textfield" name="stuNo" size="12" value=""></th>
+	<th>姓名：<input type="textfield" name="stuName" size="10" value="">
+		
+	          <!-- for from file version: 
+			  <input type="hidden" name="originalStuNo" value="">  
+			  2017-0924 -->
+	          
+	          <input type="hidden" name="stuScore" value="~&gt;&lt;~">
+	</th>
+  </tr>
+  <tr>
+    <th colspan="3">上課時間：&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="hidden" name="today" value=""> 
+	  <input type="button" value="繳交作業" onclick="checkData(this.form);">
+	  <input type="hidden" name="courseIndex" value="">
+	</th>
+  </tr>
+  <!-- 練習與解答區 -->
+	 
+  <!-- ================================================================= --> 
+  <tr>
+    <td colspan="3">
+    <div>
+      <div id="exercise" name="exercise2" onclick="hideOrShow(2);">
+	    <pre>題目：1<br>請參考下圖中的 HTML 碼與對應的顯示結果，將九九乘法表寫入 HTML table 中，<br>也就是輸出 HTML 碼，並存成 <font color="#0000FF">table9x9.html</font>，最後請以瀏覽器開啟與顯示。<br><hr> <img src="./課程：數據程式設計-2023-0302_files/SimpleTableShow.jpg"> <hr> 
+		</pre> 
+	  </div>
+      <div class="myImage" id="myImage2" name="image2">
+      
+        
+	  
+	  </div>
+	  <div class="myCode" id="myCode2">
+	    <textarea cols="120" rows="25" name="myCode[]" id="myCode">//=== 貼上程式碼</textarea>
+	  </div>
+	</div>   
+    </td>
+  </tr>
+	 
+  <!-- ================================================================= --> 
+  <tr>
+    <td colspan="3">
+    <div>
+      <div id="exercise" name="exercise3" onclick="hideOrShow(3);">
+	    <pre>題目：2<br>請使用<font color="#0000FF">二維 list 來建構 pattern</font>，藉以印出下列形式的九九乘法表。<br><hr>1x1=1 1x2= 2 1x3= 3 1x4= 4 1x5= 5 1x6= 6 1x7= 7 1x8= 8 1x9= 9 <br>      2x2= 4 2x3= 6 2x4= 8 2x5=10 2x6=12 2x7=14 2x8=16<br>             3x3= 9 3x4=12 3x5=15 3x6=18 3x7=21 <br>                    4x4=16 4x5=20 4x6=24 <br>                           5x5=25 <br>                    6x4=24 6x5=30 6x6=36  <br>             7x3=21 7x4=28 7x5=35 7x6=42 7x7=49  <br>      8x2=16 8x3=24 8x4=32 8x5=40 8x6=48 8x7=56 8x8=64 <br>9x1=9 9x2=18 9x3=27 9x4=36 9x5=45 9x6=54 9x7=63 9x8=72 9x9=81<hr> 
+		</pre> 
+	  </div>
+      <div class="myImage" id="myImage3" name="image3">
+      
+        
+	  
+	  </div>
+	  <div class="myCode" id="myCode3">
+	    <textarea cols="120" rows="25" name="myCode[]" id="myCode">//=== 貼上程式碼</textarea>
+	  </div>
+	</div>   
+    </td>
+  </tr>
+	 
+  <!-- ================================================================= --> 
+  <tr>
+    <td colspan="3">
+    <div>
+      <div id="exercise" name="exercise4" onclick="hideOrShow(4);">
+	    <pre>題目：3<br>請將兩個檔案(<font color="#0000FF">img_part0.dat, img_part1.da</font>t)，依序以<font color="#0000FF">二進位</font>的形式，合併成一個檔案，<br>取名為 "<font color="#0000FF">你的學號.webp</font>"。最後請同時將程式碼與合成後的圖檔上傳。<br><a href="http://140.129.118.16/~richwang/exercise/data/img_part.zip" target="_blank">下載 img_part 內容</a> 
+		</pre> 
+	  </div>
+      <div class="myImage" id="myImage4" name="image4">
+      
+        
+	  
+	  </div>
+	  <div class="myCode" id="myCode4">
+	    <textarea cols="120" rows="25" name="myCode[]" id="myCode">//=== 貼上程式碼</textarea>
+	  </div>
+	</div>   
+    </td>
+  </tr>
+	 
+  <!-- ================================================================= --> 
+  <tr>
+    <td colspan="3">
+    <div>
+      <div id="exercise" name="exercise5" onclick="hideOrShow(5);">
+	    <pre>題目：4<br>請建立一個 "<font color="#0000FF">module_你的學號.py</font>" 的檔案，請測試一切正常後，<br>另外再寫一程式，import 該 module，來引用裡面的函式。<br>裡面需要包含兩個函式:<font color="#0000FF"> table9x9()</font>, <font color="#0000FF">fac_table(n)</font>，其中<br>table9x9(): 印出完整的九九乘法表。 <br>fac_table(n): 印出 1 ~ n 的階乘表，測試時 n 的值請至少大於 <font color="#0000FF">20</font>。 
+		</pre> 
+	  </div>
+      <div class="myImage" id="myImage5" name="image5">
+      
+        
+	  
+	  </div>
+	  <div class="myCode" id="myCode5">
+	    <textarea cols="120" rows="25" name="myCode[]" id="myCode">//=== 貼上程式碼</textarea>
+	  </div>
+	</div>   
+    </td>
+  </tr>
+	 
+  <!-- ================================================================= --> 
+  <tr>
+    <td colspan="3">
+    <div>
+      <div id="exercise" name="exercise6" onclick="hideOrShow(6);">
+	    <pre>題目：5<br>請使用遞迴(<font color="#0000FF">recursive</font>)方式，來求解 hanoi tower(<font color="#0000FF">河內塔</font>)。<br>假設有 A, B, C 三根柱子，先將 n 個盤子由大(數字大者)到小放上 A 柱，現在利用 B 柱當輔助，<br>希望將他們全部搬到 C 柱。過程中，大盤子不可以壓住比它小的盤子。<br><a href="https://www.includehelp.com/data-structure-tutorial/tower-of-hanoi-using-recursion.aspx" target="_blank">hanoi tower 參考網址</a> 
+		</pre> 
+	  </div>
+      <div class="myImage" id="myImage6" name="image6">
+      
+        
+	  
+	  </div>
+	  <div class="myCode" id="myCode6">
+	    <textarea cols="120" rows="25" name="myCode[]" id="myCode">//=== 貼上程式碼</textarea>
+	  </div>
+	</div>   
+    </td>
+  </tr>
+	 
+  <!-- ================================================================= --> 
+  <tr>
+    <td colspan="3">
+    <div>
+      <div id="exercise" name="exercise7" onclick="hideOrShow(7);">
+	    <pre>題目：6<br>請為 <font color="#0000FF">Circle</font> 類別新增一個 <font color="#0000FF">about</font> 方法，用來顯示當前 Circle 物件的內容，即<font color="#0000FF">顯示其半徑、面積與周長</font>。 
+		</pre> 
+	  </div>
+      <div class="myImage" id="myImage7" name="image7">
+      
+        
+	  
+	  </div>
+	  <div class="myCode" id="myCode7">
+	    <textarea cols="120" rows="25" name="myCode[]" id="myCode">//=== 貼上程式碼</textarea>
+	  </div>
+	</div>   
+    </td>
+  </tr>
+	 
+  <!-- ================================================================= --> 
+  <tr>
+    <td colspan="3">
+    <div>
+      <div id="exercise" name="exercise8" onclick="hideOrShow(8);">
+	    <pre>題目：7<br>請參考 <font color="#0000FF">Circle</font> 類別定義，設計 <font color="#0000FF">Rectangle</font> 類別，成員資料包含<font color="#0000FF">寬與高</font>，以及與 Circle 相同的方法。<br>接著請<font color="#0000FF">隨機建立五個 Rectangle 物件</font>，並顯示<font color="#0000FF">各個 Rectangle 物件的面積與總面積的和</font>。 
+		</pre> 
+	  </div>
+      <div class="myImage" id="myImage8" name="image8">
+      
+        
+	  
+	  </div>
+	  <div class="myCode" id="myCode8">
+	    <textarea cols="120" rows="25" name="myCode[]" id="myCode">//=== 貼上程式碼</textarea>
+	  </div>
+	</div>   
+    </td>
+  </tr>
+ 
+ 
+</tbody></table>
+
+</form>
+
+
+
+</body></html>

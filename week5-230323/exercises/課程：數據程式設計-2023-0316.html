@@ -1,0 +1,204 @@
+
+<!-- saved from url=(0110)http://140.129.118.16/~richwang/exercise/TodayExercises_title_ForLook.php?dataFile=111-2-BigData-2023-0316.txt -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=Big5">
+
+<!-- global variables are listed below! -->
+  <title>課程：數據程式設計</title>
+  <style>
+    #title 
+	{
+	  color: blue;
+	  font-size: 120%; 
+	} 
+	#code
+	{  color:blue;
+	   font-family: "細明體","new courier"; 
+	}
+	#exercise
+	{  color: red;
+	   font-size: 110%;
+	   background-color: #FFE0AE;
+	   padding: 10px 10px 10px 10px; 
+	}
+	.myImage
+	{  /*float: left;*/ 
+	   width: 260;
+	   border: 1;
+	   padding: 5px 3px 3px 3px;
+	}
+	.myCode
+	{  /*float: right;*/ 
+       color: blue; 
+	   background-color: #DCFFF9;
+	   padding: 5px 3px 3px 3px; 
+	} 
+  </style> 
+  
+  <script language="Javascript1.2">
+    function hideOrShow(n)
+	{  
+	   var str = "myCode"+n;
+	      
+	   var el = document.getElementById(str);
+	   	   
+	   if ( el.style.display != "none" )
+	   {  el.style.display = "none";
+	   }
+	   else
+	   {  el.style.display = '';
+	   }
+	   
+	   str = "myImage"+n;
+	      
+	   var el = document.getElementById(str);
+	   	   
+	   if ( el.style.display != "none" )
+	   {  el.style.display = "none";
+	   }
+	   else
+	   {  el.style.display = '';
+	   }
+	} 
+
+	  function checkData(form) // 傳送資料前做初步的資料驗證 
+	  { 
+	     if ( form.stuNo.value=="" )
+		 {  alert("學號是一定要的啦！");
+	        return;
+	     }
+	     /*  for from file version:
+		 else if ( form.stuNo.value!="" ) // 2017-0924
+		 {
+			alert("學號輸入錯誤！"); 
+			return;
+		 }
+		 */
+	     else if ( form.stuName.value=="" )
+	     {  alert("您漏填姓名了！");
+	        return;
+	     }  
+	     /*
+		 else if ( form.fPassword.value=="" )
+		   {  alert("少密碼是不行的！");
+	          return;
+	       }
+		 //*/    
+		 form.submit(); // 檢查後可以放心傳送資料了！      
+	  }
+  </script> 
+</head>
+<body>
+
+<form name="frmExercise" action="http://140.129.118.16/~richwang/exercise/upload_exercise_DIP_div.php" method="post" enctype="multipart/form-data"> 
+
+<table border="1" width="100%">
+  <caption id="title">課程：數據程式設計</caption> 
+  <tbody><tr>
+    <th>班級：<input type="textfield" name="stuClass" size="10" value="資工二"></th>
+	<th>學號：<input type="textfield" name="stuNo" size="12" value=""></th>
+	<th>姓名：<input type="textfield" name="stuName" size="10" value="">
+		
+	          <!-- for from file version: 
+			  <input type="hidden" name="originalStuNo" value="">  
+			  2017-0924 -->
+	          
+	          <input type="hidden" name="stuScore" value="~&gt;&lt;~">
+	</th>
+  </tr>
+  <tr>
+    <th colspan="3">上課時間：&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="hidden" name="today" value=""> 
+	  <input type="button" value="繳交作業" onclick="checkData(this.form);">
+	  <input type="hidden" name="courseIndex" value="">
+	</th>
+  </tr>
+  <!-- 練習與解答區 -->
+	 
+  <!-- ================================================================= --> 
+  <tr>
+    <td colspan="3">
+    <div>
+      <div id="exercise" name="exercise2" onclick="hideOrShow(2);">
+	    <pre>題目：1<br>timedelta的引用<br>引用的方式: <font color="#0000FF">from datetime import timedelta</font><br>請寫 Python 程式，印出"<font color="#0000FF">數據程式設計</font>"課程，全部 18 週上課的日期。<br>例如，本(111-2)學期開學第一週的上課日期為: 2023-0223。<br><hr><font color="#0000FF">2023-0223<br>2023-0302<br>...</font><br><br>共 18 週的日期。<hr> 
+		</pre> 
+	  </div>
+      <div class="myImage" id="myImage2" name="image2" style="display: none;">
+      
+        
+	  
+	  </div>
+	  <div class="myCode" id="myCode2" style="display: none;">
+	    <textarea cols="120" rows="25" name="myCode[]" id="myCode">//=== 貼上程式碼</textarea>
+	  </div>
+	</div>   
+    </td>
+  </tr>
+	 
+  <!-- ================================================================= --> 
+  <tr>
+    <td colspan="3">
+    <div>
+      <div id="exercise" name="exercise3" onclick="hideOrShow(3);">
+	    <pre>題目：2<br>有一個經過加密的檔案 <a href="http://140.129.118.16/~richwang/exercise/data/ReadMe.txt" target="_blank">ReadMe.txt</a>，請嘗試破解出其中的訊息。<br>該檔案內容的編碼是 <font color="#0000FF">utf-8</font>，且每個 byte 都與同樣的 code 進行 <font color="#0000FF">xor(互斥或)</font>的運算，<br>再重新儲存成 <font color="#0000FF">ReadMe.txt</font>。<br>請試著找出該 code，來再次與內容逐 byte 進行 xor 運算，還原正確的訊息。<br><hr>* ^(xor)的性質: <br>假設 <font color="#0000FF">A' = not A, A and B = A &amp; B = AB, A or B = A | B = A + B,</font><br>1) A xor B = A ^ B = A'B + AB' --&gt; 相同為 0，相異為 1。<br>2) 根據 1 )的規則，我們可以得到: <font color="#0000FF">x ^ 0 = x, x ^ 1 = x'</font><br>3) <font color="#0000FF">a ^ c ^ c = a</font><hr> 
+		</pre> 
+	  </div>
+      <div class="myImage" id="myImage3" name="image3" style="display: none;">
+      
+        
+	  
+	  </div>
+	  <div class="myCode" id="myCode3" style="display: none;">
+	    <textarea cols="120" rows="25" name="myCode[]" id="myCode">//=== 貼上程式碼</textarea>
+	  </div>
+	</div>   
+    </td>
+  </tr>
+	 
+  <!-- ================================================================= --> 
+  <tr>
+    <td colspan="3">
+    <div>
+      <div id="exercise" name="exercise4" onclick="hideOrShow(4);">
+	    <pre>題目：3<br>請建立 <font color="#0000FF">Vector3</font> 類別，需要給三個分量&lt;x, y, z&gt;的值。<br>並完成向量的 +, -, *(<font color="#0000FF">cross向量積</font> 與 <font color="#0000FF">分量乘值</font>)的計算與顯示。<br>相加: &lt;x1, y1, z1&gt; + &lt;x2, y2, z2&gt; = &lt;x1+x2, y1+y2, z1+z2&gt;<br>相減: &lt;x1, y1, z1&gt; - &lt;x2, y2, z2&gt; = &lt;x1-x2, y1-y2, z1-z2&gt;<br>相乘: 1) &lt;x1, y1, z1&gt; * &lt;x2, y2, z2&gt; = &lt;y1*z2-y2*z1, x2*z1-x1*z2, x1*y2-x2*y1&gt;<br>      2) &lt;x1, y1, z1&gt; * n = &lt;n*x1, n*y1, n*z1&gt;<br>(* 需要實作下列的方法: <font color="#0000FF">__add__, __sub__, __mul__</font>。)<br>若已知 A = &lt;2, 6, 7&gt;, B = &lt;3, 5, 2&gt;，<br>請完成下列計算，並印出計算的結果:<br>1. A + B<br>2. A - B<br>3. A * B<br>4. A * 3 (not 3 * A)<br>5. A * B + B * A 
+		</pre> 
+	  </div>
+      <div class="myImage" id="myImage4" name="image4" style="display: none;">
+      
+        
+	  
+	  </div>
+	  <div class="myCode" id="myCode4" style="display: none;">
+	    <textarea cols="120" rows="25" name="myCode[]" id="myCode">//=== 貼上程式碼</textarea>
+	  </div>
+	</div>   
+    </td>
+  </tr>
+	 
+  <!-- ================================================================= --> 
+  <tr>
+    <td colspan="3">
+    <div>
+      <div id="exercise" name="exercise5" onclick="hideOrShow(5);">
+	    <pre>題目：4<br>請完成下列目錄結構的建置。<br>1) 請先將下列目錄架構，以 dict 的形式來儲存:<br>   如果不包含子目錄，就以空字串表示；<br>   如果包含子目錄，就再以dict來儲存子目錄的內容。<br>   例如，<font color="#0000FF">'dir_name': ""</font>  or <font color="#0000FF">'dir_name': {'subdir1': "", 'sundir2': ""}</font>。<br>2) 接著請寫 Python 程式，讀取該 dict，並完成目錄結構的建置。<br><hr><font color="#0000FF">my_data<br>	jpg<br>	png<br>	gif<br>	data<br>		txt<br>		dat<br>	python<br>		py<br>		ipynb</font><hr><br>(* import os, 然後使用 os.mkdir(path) 來建立目錄，要提供完整的 path。) 
+		</pre> 
+	  </div>
+      <div class="myImage" id="myImage5" name="image5" style="display: none;">
+      
+        
+	  
+	  </div>
+	  <div class="myCode" id="myCode5" style="display: none;">
+	    <textarea cols="120" rows="25" name="myCode[]" id="myCode">//=== 貼上程式碼</textarea>
+	  </div>
+	</div>   
+    </td>
+  </tr>
+ 
+ 
+</tbody></table>
+
+</form>
+
+
+
+</body></html>
