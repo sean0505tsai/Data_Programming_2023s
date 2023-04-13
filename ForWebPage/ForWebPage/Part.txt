@@ -1,0 +1,5 @@
+葉聿欣,11112345,資工二,mary@gmail.com
+李清蓁,11154246,智動四,fish@ntut.edu.tw 
+趙欣勇,11133250,電機三甲,brave@ntut.edu.tw 
+劉清,11161022,資財四甲,clear@ntut.edu.tw 
+歐陽素素,11155135,電機四丙,swing@ntut.edu.tw 
