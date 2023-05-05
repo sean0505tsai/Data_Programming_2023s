@@ -1,0 +1,223 @@
+高中職以上學校學生就學貸款統計.csv
+
+'''
+os:
+listdir()
+chdir(), mkdir(), rmdir()
+
+os.path:
+splitext(): (fname, .ext)
+exists(), isdir(), isfile()
+    
+shutil:
+copy(), move(), remove()
+
+def checkFor():
+    for i in range(10):
+        pass
+    else:
+        print("Nothing happened!")
+        
+checkFor()
+'''
+
+#Problem 1:
+|*    |
+|**   |
+|***  |
+|**** |
+|*****|
+|**** |
+|***  |
+|**   |
+|*    | 
+
+|*         *|
+|**       **|
+|***     ***|
+|****   ****|
+|***** *****|
+
+#Problem 2:
+pattern = [[1, 0, 0 ,0, 1, 1, 1, 1, 0],[0, 1, 1, 0, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 1, 1, 0, 0],[0, 0, 1, 0, 1, 1, 1, 0, 1],[1, 0, 1, 1, 1, 0, 0, 0, 0],[1,1,0,0,1,0,0,0,1],[0,1,1,1,0,1,1,1,0],[0,0,0,1,1,1,0,0,0],[1,0,0,1,1,0,1,0,1]]
+for i in range(9):
+    for j in range(9):
+        if pattern[i][j] == 0:
+            table2d[i][j] = ' '
+notprint=[[1,2,6],[1,4,7,8,9],[3,4,6,7,9],[3,4,6,7,9],[1,2,4,5,6,7,8],[1,2,5,9],[2,3,6,8,9],[5,6,9],[2,5,9]]
+
+result = '<table border=1>'
+    for i in range(1,10):
+        result+="\t<tr>\n"
+        for j in range(1,10):
+            judge = 1
+            if(i == 1):
+                if(j == 3 or j == 4 or j == 6 or j == 9):
+                    result+="\t\t<th>" + list[i-1][j-1] + "</th>\n"
+                    judge = 0
+            elif(i == 2):
+                if(j == 1 or j == 2 or j == 4 or j == 5 or j == 8 or j == 9):
+                    result+="\t\t<th>" + list[i-1][j-1] + "</th>\n"
+                    judge = 0
+            elif(i == 3):
+                if(j == 3 or j == 5 or j == 8 or j == 9):
+                    result+="\t\t<th>" + list[i-1][j-1] + "</th>\n"
+                    judge = 0
+            elif(i == 4):
+                if(j == 2 or j == 4 or j == 7):
+                    result+="\t\t<th>" + list[i-1][j-1] + "</th>\n"
+                    judge = 0
+            elif(i == 5):
+                if(j == 2 or j == 4 or j == 5 or j == 7 or j == 9):
+                    result+="\t\t<th>" + list[i-1][j-1] + "</th>\n"
+                    judge = 0
+            elif(i == 6):
+                if(j == 1 or j == 2 or j == 3 or j == 6 or j == 8 or j == 9):
+                    result+="\t\t<th>" + list[i-1][j-1] + "</th>\n"
+                    judge = 0
+            elif(i == 7):
+                if(j == 2 or j == 5 or j == 7):
+                    result+="\t\t<th>" + list[i-1][j-1] + "</th>\n"
+                    judge = 0
+            elif(i == 8):
+                if(j == 2 or j == 3 or j == 5 or j == 7 or j == 8 or j == 9):
+                    result+="\t\t<th>" + list[i-1][j-1] + "</th>\n"
+                    judge = 0
+            elif(i == 9):
+                if(j == 1 or j == 2 or j == 4 or j == 6 or j == 7 or j == 8):
+                    result+="\t\t<th>" + list[i-1][j-1] + "</th>\n"
+                    judge = 0
+            if(judge == 1):
+                result+="\t\t<th>" + " "*len(list[i-1][j-1]) + "</th>\n"  
+                judge = 0      
+        result+="\t</tr>\n"
+		
+#Problem 3:
+codestr = """
+a->f b->s c->x d->y e->g f->i g->j h->p i->r j->u
+k->n l->h m->z n->v o->m p->t q->c r->d s->l t->e
+u->w v->b w->o x->q y->a z->k 
+"""
+codes = codestr.strip().split()
+
+def encode(msg):
+    result = ""
+    for ch in msg:
+        result += encode_dict[ch]  if ch != " " else " "
+    return result
+
+code={"a":"l","b":"t","c":"f","d":"x","e":"j",
+	  "f":"q","g":"h","h":"z","i":"g","j":"v",
+	  "k":"c","l":"m","m":"u","n":"d","o":"o",
+	  "p":"e","q":"s","r":"y","s":"a","t":"w",
+	  "u":"b","v":"i","w":"r","x":"k","y":"p",
+	  "z":"n"}
+
+
+code={"l":"a","t":"b","f":"c","x":"d","j":"e",
+	  "q":"f","h":"g","z":"h","g":"i","v":"j",
+	  "c":"k","m":"l","u":"m","d":"n","o":"o",
+	  "e":"p","s":"q","y":"r","a":"s","w":"t",
+	  "b":"u","i":"v","r":"w","k":"x","p":"y",
+	  "n":"z"}
+	  
+#----------------------------------------
+_dict = {
+    "a": "g",
+    "b": "z",
+    "c": "u",
+    "d": "j",
+    "e": "f",
+    "f": "d",
+    "g": "n",
+    "h": "x",
+    "i": "m",
+    "j": "y",
+    "k": "e",
+    "l": "k",
+    "m": "c",
+    "n": "w",
+    "o": "l",
+    "p": "s",
+    "q": "r",
+    "r": "t",
+    "s": "q",
+    "t": "p",
+    "u": "a",
+    "v": "h",
+    "w": "b",
+    "x": "v",
+    "y": "i",
+    "z": "o "
+}
+
+
+def encode(msg):
+    res = ""
+    for i in msg:  # encode
+        if (i == " "):
+            res += i
+            continue
+        res += str(_dict.get(i))
+    print(res)
+    return res
+
+
+def decode(cipher):
+    res = ""
+    for i in cipher:  # decode
+        if (i == " "):
+            res += i
+            continue
+        res += list(_dict.keys())[list(_dict.values()).index(i)]
+    print(res)
+    return res	  
+	
+#----------------
+def encode(msg):
+    cipher = ""
+    for c in msg.lower():
+        if c.isalpha():
+            cipher += {'a': 'r', 'b': 'a', 'c': 'l', 'd': 'n', 'e': 'z',
+                       'f': 's', 'g': 'j', 'h': 'd', 'i': 'f', 'j': 'y',
+                       'k': 'e', 'l': 'k', 'm': 'b', 'n': 'i', 'o': 'p',
+                       'p': 't', 'q': 'm', 'r': 'c', 's': 'w', 't': 'x',
+                       'u': 'o', 'v': 'q', 'w': 'v', 'x': 'h', 'y': 'g',
+                       'z': 'u'}[c]
+        else:
+            cipher += c
+    return cipher
+
+
+def decode(cipher):
+    msg = ""
+    for c in cipher:
+        if c.isalpha():
+            msg += {v: k for k, v in {'a': 'r', 'b': 'a', 'c': 'l', 'd': 'n', 'e': 'z',
+                                      'f': 's', 'g': 'j', 'h': 'd', 'i': 'f', 'j': 'y',
+                                      'k': 'e', 'l': 'k', 'm': 'b', 'n': 'i', 'o': 'p',
+                                      'p': 't', 'q': 'm', 'r': 'c', 's': 'w', 't': 'x',
+                                      'u': 'o', 'v': 'q', 'w': 'v', 'x': 'h', 'y': 'g',
+                                      'z': 'u'}.items()}[c]
+        else:
+            msg += c
+    return msg
+	
+
+#Problem 4:
+for file in filelist:
+    path = f"./{ file[1] }"
+    os.mkdir(path)
+    shutil.move( f"{now_path}/{file[0]}.{file[1]}", f"{path}/{file[0]}-54007.{file[1]}" )
+	
+#Problem 5:
+
+type = '| 學年度 | 項目           | 公立大專校院  | 私立大專校院   | 公立高中職 | 私立高中職  |'
+list = [1,3,5,7]
+str = '123'
+
+print('| {:6} |'.format(row[0])+' {:0} |'.format(row[1])+' {:>13} |'.format(row[2])+' {:>14} |'.format(row[3]),end="")
+replace with f-strings firmat
+#----------------------------------------------------
+['DirEntry', 'F_OK', 'GenericAlias', 'Mapping', 'MutableMapping', 'O_APPEND', 'O_BINARY', 'O_CREAT', 'O_EXCL', 'O_NOINHERIT', 'O_RANDOM', 'O_RDONLY', 'O_RDWR', 'O_SEQUENTIAL', 'O_SHORT_LIVED', 'O_TEMPORARY', 'O_TEXT', 'O_TRUNC', 'O_WRONLY', 'P_DETACH', 'P_NOWAIT', 'P_NOWAITO', 'P_OVERLAY', 'P_WAIT', 'PathLike', 'R_OK', 'SEEK_CUR', 'SEEK_END', 'SEEK_SET', 'TMP_MAX', 'W_OK', 'X_OK', '_AddedDllDirectory', '_Environ', '__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', '_check_methods', '_execvpe', '_exists', '_exit', '_fspath', '_get_exports_list', '_walk', '_wrap_close', 'abc', 'abort', 'access', 'add_dll_directory', 'altsep', 'chdir', 'chmod', 'close', 'closerange', 'cpu_count', 'curdir', 'defpath', 'device_encoding', 'devnull', 'dup', 'dup2', 'environ', 'error', 'execl', 'execle', 'execlp', 'execlpe', 'execv', 'execve', 'execvp', 'execvpe', 'extsep', 'fdopen', 'fsdecode', 'fsencode', 'fspath', 'fstat', 'fsync', 'ftruncate', 'get_exec_path', 'get_handle_inheritable', 'get_inheritable', 'get_terminal_size', 'getcwd', 'getcwdb', 'getenv', 'getlogin', 'getpid', 'getppid', 'isatty', 'kill', 'linesep', 'link', 'listdir', 'lseek', 'lstat', 'makedirs', 'mkdir', 'name', 'open', 'pardir', 'path', 'pathsep', 'pipe', 'popen', 'putenv', 'read', 'readlink', 'remove', 'removedirs', 'rename', 'renames', 'replace', 'rmdir', 'scandir', 'sep', 'set_handle_inheritable', 'set_inheritable', 'spawnl', 'spawnle', 'spawnv', 'spawnve', 'st', 'startfile', 'stat', 'stat_result', 'statvfs_result', 'strerror', 'supports_bytes_environ', 'supports_dir_fd', 'supports_effective_ids', 'supports_fd', 'supports_follow_symlinks', 'symlink', 'sys', 'system', 'terminal_size', 'times', 'times_result', 'truncate', 'umask', 'uname_result', 'unlink', 'unsetenv', 'urandom', 'utime', 'waitpid', 'waitstatus_to_exitcode', 'walk', 'write']
+['COPY_BUFSIZE', 'Error', 'ExecError', 'ReadError', 'RegistryError', 'SameFileError', 'SpecialFileError', '_ARCHIVE_FORMATS', '_BZ2_SUPPORTED', '_GiveupOnFastCopy', '_HAS_FCOPYFILE', '_LZMA_SUPPORTED', '_UNPACK_FORMATS', '_USE_CP_SENDFILE', '_WINDOWS', '_WIN_DEFAULT_PATHEXT', '_ZLIB_SUPPORTED', '__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__spec__', '_access_check', '_basename', '_check_unpack_options', '_copyfileobj_readinto', '_copytree', '_copyxattr', '_destinsrc', '_ensure_directory', '_fastcopy_fcopyfile', '_fastcopy_sendfile', '_find_unpack_format', '_get_gid', '_get_uid', '_is_immutable', '_islink', '_make_tarball', '_make_zipfile', '_ntuple_diskusage', '_rmtree_isdir', '_rmtree_islink', '_rmtree_safe_fd', '_rmtree_unsafe', '_samefile', '_stat', '_unpack_tarfile', '_unpack_zipfile', '_use_fd_functions', 'chown', 'collections', 'copy', 'copy2', 'copyfile', 'copyfileobj', 'copymode', 'copystat', 'copytree', 'disk_usage', 'errno', 'fnmatch', 'get_archive_formats', 'get_terminal_size', 'get_unpack_formats', 'getgrnam', 'getpwnam', 'ignore_patterns', 'make_archive', 'move', 'nt', 'os', 'posix', 'register_archive_format', 'register_unpack_format', 'rmtree', 'stat', 'sys', 'unpack_archive', 'unregister_archive_format', 'unregister_unpack_format', 'which']
